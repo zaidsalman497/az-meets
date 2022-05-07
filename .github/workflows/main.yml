@@ -37,7 +37,7 @@ jobs:
         uses: actions/upload-artifact@main
         with:
           name: dist
-          path: dist
+          path: dist/az-meets
 
   deploy:
     name: Deploy
@@ -51,9 +51,8 @@ jobs:
         with:
           name: dist
           path: dist
-      - name: Deploy to Firebase
-        uses: w9jds/firebase-action@master
+      - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
-          args: deploy --only hosting
-        env:
-          FIREBASE_TOKEN: 1//0g3I6eK5asTonCgYIARAAGBASNwF-L9Ir5nro6MlfNnjSROYXqOWmpX4sBDjmJ1Z5IunqZOm85_27oqTCfUO_PTnoThRyenGH4eA
+          repoToken: '${{ secrets.GITHUB_TOKEN }}'
+          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_AZ_PROJECT_BC46F }}'
+          projectId: az-project-bc46f
