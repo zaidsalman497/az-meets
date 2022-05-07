@@ -26,7 +26,7 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Checkout Repo
         uses: actions/checkout@main
-      
+
       - name: Install Dependencies
         run: npm install
 
@@ -52,7 +52,7 @@ jobs:
           name: dist
           path: dist
       - name: Deploy to Firebase
-        uses: bc46f/firebase-action@main
+        uses: zaidsalman497/az-meets@main
         with:
           args: deploy --only hosting
         env:
