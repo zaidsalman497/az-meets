@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { AngularFireModule } from '@angular/fire/compat';
-import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { AngularFireAuthModule, USE_EMULATOR as USE_AUTH_EMULATOR } from '@angular/fire/compat/auth';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import * as firebase from 'firebase/compat';
@@ -18,18 +18,6 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
   signInFlow: 'popup',
   signInOptions: [
     firebase.default.auth.GoogleAuthProvider.PROVIDER_ID,
-    {
-      scopes: [
-        'public_profile',
-        'email',
-        'user_likes',
-        'user_friends'
-      ],
-      customParameters: {
-        'auth_type': 'reauthenticate'
-      },
-      provider: firebase.default.auth.GoogleAuthProvider.PROVIDER_ID
-    },
     {
       requireDisplayName: false,
       provider: firebase.default.auth.EmailAuthProvider.PROVIDER_ID
@@ -54,7 +42,9 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
     AngularFireAuthModule,
     FirebaseUIModule.forRoot(firebaseUiAuthConfig)
   ],
-  providers: [],
+  providers: [
+    { provide: USE_AUTH_EMULATOR, useValue: !environment.production ? ['localhost', 4200] : undefined },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
