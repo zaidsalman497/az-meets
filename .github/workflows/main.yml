@@ -52,8 +52,8 @@ jobs:
           name: dist
           path: dist
       - name: Deploy to Firebase
-        uses: zaidsalman497/az-meets@main
+        uses: w9jds/firebase-action@master
         with:
           args: deploy --only hosting
         env:
-          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+          FIREBASE_TOKEN: 1//0g3I6eK5asTonCgYIARAAGBASNwF-L9Ir5nro6MlfNnjSROYXqOWmpX4sBDjmJ1Z5IunqZOm85_27oqTCfUO_PTnoThRyenGH4eA
