@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "target": "az-project-bc46f",
+    "target": "az-meets",
     "public": "dist/az-meets",
     "ignore": [
       "**/.*"
