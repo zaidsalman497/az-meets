@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "target": "az-meets",
+    "target": "az-project",
     "public": "dist/az-meets",
     "ignore": [
       "**/.*"
