@@ -16,6 +16,7 @@ import { AngularFirestoreModule } from "@angular/fire/compat/firestore";
 import {firebase, firebaseui, FirebaseUIModule} from 'firebaseui-angular';
 import { AuthenticationService } from './services/authentication.service';
 import { LoggedinComponent } from './loggedin/loggedin.component';
+import { FirebaseUisignedinComponent } from './firebase-uisignedin/firebase-uisignedin.component';
 
 
 const firebaseUiAuthConfig: firebaseui.auth.Config = {
@@ -42,7 +43,8 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
     HomeComponent,
     LoginComponent,
     NavbarComponent,
-    LoggedinComponent
+    LoggedinComponent,
+    FirebaseUisignedinComponent
   ],
   imports: [
     BrowserModule,
