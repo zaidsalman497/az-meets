@@ -15,12 +15,12 @@ import { AngularFireAuthModule } from "@angular/fire/compat/auth";
 import { AngularFirestoreModule } from "@angular/fire/compat/firestore";
 import {firebase, firebaseui, FirebaseUIModule} from 'firebaseui-angular';
 import { AuthenticationService } from './services/authentication.service';
+import { LoggedinComponent } from './loggedin/loggedin.component';
 
 
 const firebaseUiAuthConfig: firebaseui.auth.Config = {
   signInFlow: 'popup',
   signInOptions: [
-    firebase.auth.GoogleAuthProvider.PROVIDER_ID,
     {
       requireDisplayName: false,
       provider: firebase.auth.EmailAuthProvider.PROVIDER_ID
@@ -41,7 +41,8 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
     AppComponent,
     HomeComponent,
     LoginComponent,
-    NavbarComponent
+    NavbarComponent,
+    LoggedinComponent
   ],
   imports: [
     BrowserModule,
